@@ -18,6 +18,11 @@
       <script src="https://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
       <script src="{% static 'js/regress.js' %}"></script>
 
+   <!-- bootstrap-select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
 
 
 
@@ -28,9 +33,18 @@
       <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body style="background-color:#f2f2f2 ">
+  {% block js %}
+
+  {% endblock %}
+  <script>
+        $(document).ready(function(){
+            {% block jquery %}
+            {% endblock %}
+    });
+  </script>
 <div class="container" style="width: 100%">
-<div class="row" style="background-color: black" >
+<div class="row" style="background-color: #f2f2f2" >
   <div class="col-md-5" >
 
   {% load staticfiles %}
@@ -60,12 +74,12 @@
   </div>
 </div>
 <div class="row">
-<ul class="nav nav-pills" style="background-color: black">
+<ul class="nav nav-pills " style="background-color: black">
    <li class="active"><a href="{% url 'regress:index' %}">Home</a></li>
 
    {% for menu in menus %}
     <li >
-        <a href="{% url 'regress:case' %}">{{ menu.menu_name }}</a>
+        <a href="{% url 'regress:case_detail' %}">{{ menu.menu_name }}</a>
         <ul class="dropdown-menu" aria-labelledby="dropmenu">
             <li data-toggle="dropdown" >
                 <a href="{% url 'regress:case' %}">{{ menu.menu_name }}</a>
@@ -81,7 +95,7 @@
   {% block content %}
   {% endblock %}
     </div>
-  <div class="bottom" style="width:100%;height: 100px;background-color: black ">
+  <div class="bottom" style="width:100%;height: 100px;background-color: white ">
   <footer class="bottom">
       <p class="">
           版权归个人所有，请勿侵权！

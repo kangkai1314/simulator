@@ -8,10 +8,17 @@ from . import models
 
 class TaskAdmin(admin.ModelAdmin):
     list_filter = ['task_id','task_type','status']
+
+
+class StepAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(models.Task,TaskAdmin)
 admin.site.register(models.Case)
 admin.site.register(models.Step)
 admin.site.register(models.Function)
 admin.site.register(models.Projcet)
 admin.site.register(models.Menu)
+admin.site.register(models.Temlate)
 

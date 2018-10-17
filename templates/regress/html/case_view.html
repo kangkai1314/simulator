@@ -1,0 +1,30 @@
+{% extends 'regress/html/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    {{ case.case_name }}
+{% endblock %}
+{% block content %}
+    <div class="row">
+    <div class="col-sm-3">
+         <div class="panel-default">
+             <div class="panel-heading">
+                 {{ case.case_name }}
+             </div>
+             <div class="panel-body">
+                  <ul class="list-group">
+          {% for step in steps %}
+  <li class="list-group-item list-group-item-info"><a href="project.html"></a> {{ step.step_name }}
+  <button class="bg-info" id="cancel" style="float: right" >取消</button>
+  <button class="btn-default" style="float: right" onclick="exe()">执行</button>
+  </li>
+
+
+          {% endfor %}
+</ul>
+
+             </div>
+         </div>
+
+    </div>
+    </div>
+{% endblock %}

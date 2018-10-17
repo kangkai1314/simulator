@@ -1,0 +1,47 @@
+{% extends 'regress/html/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    用例编辑
+{% endblock %}
+{% block content %}
+    <div class="row">
+    <div class="col-md-2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">用例系统</h3>
+  </div>
+  <div class="panel-body" style="background-color: black;height: 100%">
+    <ul class="nav nav-pills nav-stacked">
+ <li role="presentation" class="active"><a href="{% url 'regress:case' %}">用例列表</a></li>
+  <li role="presentation"><a href="{% url 'regress:task' %}">工单列表</a></li>
+  <li role="presentation"><a href="{% url 'regress:project' %}">项目列表</a></li>
+</ul>
+  </div>
+</div>
+
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+  <div class="panel-heading">
+
+          <h3 class="panel-title" >编辑用例</h3>
+  </div>
+  <div class="panel-body" style="background-color: white;height: 100%">
+  <div class="col-md-12">
+      <ol class="breadcrumb" >
+  <li><a href="{% url 'regress:project' %}">
+       <span class="glyphicon glyphicon-" aria-hidden="true"></span>基本信息编辑
+  </a></li>
+  <li><a href="#">步骤编辑</a></li>
+  <li class="active">用户信息编辑</li>
+</ol>
+  </div>
+      {% block case %}
+          {% endblock %}
+
+  </div>
+</div>
+
+    </div>
+    </div>
+{% endblock %}

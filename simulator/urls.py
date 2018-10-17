@@ -19,5 +19,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^regress/',include('regressplatform.urls',namespace='regress'))
+    url(r'^regress/',include('regressplatform.urls',namespace='regress')),
+    url(r'^test/',include('testplatform.urls',namespace='test')),
+
 ]

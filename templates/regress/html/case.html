@@ -25,41 +25,152 @@
 
 
          </div>
-     <div class="col-md-6">
+     <div class="col-md-10">
          <div class="panel panel-default">
-  <div class="panel-heading">工单管理</div>
+  <div class="panel-heading">用例管理</div>
   <div class="panel-body">
-      <ul class="list-group">
-          {% for project in projects %}
-  <li class="list-group-item list-group-item-info"><a href="project.html"></a> {{ project.project_name }}</li>
 
+  <div class="input-group">
+
+      <input type="text" class="form-control" placeholder="搜索用例" >
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">查询</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+     <div class="btn-group" role="group" aria-label="..." style="background-color: cornflowerblue">
+  <button type="button" class="btn btn-default" style="background-color: inherit">新增</button>
+  <button type="button" class="btn btn-default" style="background-color: inherit">批量删除</button>
+  <button type="button" class="btn btn-default" style="background-color: inherit">批量修改</button>
+</div>
+<table class="table table-bordered" style="background-color: azure;width: 100%;">
+
+          <thead>
+          <tr>
+               {% for col in cols %}
+                   <th>
+                     {{ col }}
+                   </th>
+              {% endfor %}
+              <th>
+                  操作
+              </th>
+
+          </tr>
+          </thead>
+          <tbody>
+          {% for case in cases %}
+              <tr>
+                  <th>
+                  {{ case.case_id }}
+                  </th>
+              <th>
+                  {{ case.case_name }}
+                  </th>
+              <th>
+                  {{ case.create_time }}
+                  </th>
+                  <th>
+                      {{ case.task_id }}
+                  </th>
+              <th style="width: 100%;float:right">
+
+                   <button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>编辑
+</button>
+
+<button type="button" class="btn btn-default " >
+  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除
+</button>
+                  <button type="button" class="btn btn-default " >
+  <span class="glyphicon glyphicon-play" aria-hidden="true"></span> 执行
+</button>
+
+              </th>
+
+              </tr>
           {% endfor %}
-</ul>
+
+</tbody>
+
+      </table>
+
+
+<div class="panel panel-default" style="height: 500px;background-color: whitesmoke">
+  <div class="panel-heading">步骤信息</div>
+  <div class="panel-body">
+
+
+  <div class="col-lg-6 col-md-4">
+    <div class="input-group">
+      <span class="label label-default">Default</span>
+      <input type="text" class="form-control" placeholder="搜索项目" >
+
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">查询</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+
+
+
+
+        <table class="table table-bordered" style="background-color: azure;width: 100%;">
+
+          <thead>
+          <tr>
+               {% for col in cols %}
+                   <th>
+                     {{ col }}
+                   </th>
+              {% endfor %}
+              <th>
+                  操作
+              </th>
+
+          </tr>
+          </thead>
+          <tbody>
+          {% for proj in projects %}
+              <tr>
+                  <th>
+                  {{ proj.project_id }}
+                  </th>
+              <th>
+                  {{ proj.project_name }}
+                  </th>
+              <th>
+                  {{ proj.create_date }}
+                  </th>
+              <th style="width: 100%;float:right">
+
+                   <button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>编辑
+</button>
+
+<button type="button" class="btn btn-default " >
+  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除
+</button>
+
+              </th>
+
+              </tr>
+          {% endfor %}
+
+</tbody>
+
+      </table>
+    </div>
 
 
   </div>
-</div>
 
+
+</div>
 
      </div>
-
-         <div class="col-md-4">
-     <button type="button" class="btn btn-default" aria-label="Left Align">
-  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-</button>
-
-<button type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
-</button>
-   <h1>Hello, world!</h1>
-         <p>如果您点击我，我会消失。</p>
-<p>点击我，我会消失。</p>
-<p>也要点击我哦。</p>
-             </div>
-
-</div>
-
-
-
 
 {% endblock %}

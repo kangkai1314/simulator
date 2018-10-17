@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This is html2</title>
+    <script src="../static/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        //alert("Hello")
+        $(function() {
+            var json_obj = {
+                userId:123,
+                username: 'lushijie',
+                datas: [
+                    {
+                        game_id: 1,
+                        level: 'first'
+                    },
+                    {
+                        game_id: 2,
+                        level: 'second'
+                    }
+                ]
+            }
+            var json_str = JSON.stringify(json_obj);    //将JSON对象转变成JSON格式的字符串
+            //$.post("http://127.0.0.1:8000/getPost",json_str, function(data){alert(data)}, "json");
+            //alert(json_str)
+            //$.post("http://django.com.cn:8000/receivePost", {'a' : json_str}, function(data){
+            $.post("http://django.com.cn:8000/receivePost", json_str, function(data){
+                    alert(data.userId)
+                    alert(data.username)
+                    alert(data.datas[0].game_id)
+                    for(i in data){
+                        alert(i+ data[i])
+                    }
+                }, "json");
+            })
+        //})
+
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

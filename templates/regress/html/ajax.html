@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <h2>this is Index!</h2>
+    <button class="Ajax">Ajax</button>
+    <p class="content"></p>
+
+    <hr>
+    <input type="text" id="num1">+<input type="text" id="num2">=<input type="text" id="ret"><button class="cal">计算</button>
+    <script>
+        $(".Ajax").click(function(){
+            //alert(123)
+           //发送ajax请求
+            $.ajax({
+                url:"/test_ajax/" ,  //请求url，不加地址它会找默认当前脚本的ip地址和端口
+                type:"get", //请求方式 a=1&b=2
+                data:{a:1,b:2}, //发送数据，键值
+                success: function (data) {  //回调函数，某个事件执行完之后再去执行的函数
+                    console.log(data);
+
+                    $(".content").html(data);
+                }
+            })
+        });
+        //Ajax计算求值
+        $(".cal").click(function () {
+            $.ajax({
+                url:"/cal/", //交给cal的路径
+                type:"post",
+                data:{
+                    "n1":$("#num1").val(),
+                    "n2":$("#num2").val(),
+                },
+                success: function (data) {
+                    console.log(data);
+                    $("#ret").val(data);
+                }
+            })
+        }) ;
+　
+    </script>
+
+</body>
+
+
+</html>
