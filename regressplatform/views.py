@@ -76,6 +76,19 @@ def tasks(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
+def vuetemplate(request):
+    if request.method == 'GET':
+        task_lists = Task.objects.all()
+        serializer = TaskSerializer(task_lists, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = TaskSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
 
 
 def case_detail(request):
@@ -136,6 +149,10 @@ def template(request):
     menus = Menu.objects.all()
     tempaltes=Temlate.objects.all()
     return render(request,'regress/html/template.html',{'menus':menus,'templates':tempaltes})
+
+def result(request):
+    return render(request,'regress/html/result.html')
+
 
 
 

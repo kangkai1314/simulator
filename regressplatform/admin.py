@@ -21,4 +21,5 @@ admin.site.register(models.Function)
 admin.site.register(models.Projcet)
 admin.site.register(models.Menu)
 admin.site.register(models.Temlate)
+admin.site.register(models.VueTemplate)
 

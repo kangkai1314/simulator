@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'regressplatform.apps.RegressplatformConfig',
     'rest_framework',
     'testplatform',
+    'moyin',
 ]
 
 MIDDLEWARE = [

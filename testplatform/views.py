@@ -9,3 +9,6 @@ from .models import TestPoint
 
 def test_points(request):
     return render(request,'testplatform/html/testpoints.html')
+
+def index(request):
+    return render(request,'testplatform/html/index.html')

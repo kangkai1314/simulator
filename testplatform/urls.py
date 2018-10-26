@@ -7,7 +7,7 @@ router = routers.DefaultRouter()
 
 
 urlpatterns = [
-    url(r'^$', views.test_points, name='index'),
+    url(r'^$', views.index, name='index'),
 
 
 ]

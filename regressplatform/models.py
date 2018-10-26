@@ -75,4 +75,13 @@ class Temlate(models.Model):
     temp_id=models.IntegerField(db_index=True,unique=True,blank=False)
     temp_name=models.CharField(max_length=100)
 
+class VueTemplate(models.Model):
+    date=models.CharField(max_length=200)
+    name=models.IntegerField(db_index=True,unique=True,blank=False)
+    province=models.CharField(max_length=200)
+    city=models.CharField(max_length=200)
+    address=models.IntegerField()
+    zip=models.CharField(max_length=200)
+
+
 

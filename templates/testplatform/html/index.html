@@ -1,0 +1,160 @@
+{% extends 'testplatform/html/base.html' %}
+{% block title %}
+    首页
+{% endblock %}
+{% block content %}
+	<div class="row">
+		<div class="span12">
+			<div class="navbar navbar-inverse">
+				<div class="navbar-inner">
+					<div class="container-fluid">
+						<a class="btn btn-navbar" data-target=".navbar-responsive-collapse" data-toggle="collapse"></a> <a class="brand" href="#">知乎</a>
+						<div class="nav-collapse collapse navbar-responsive-collapse">
+							<ul class="nav">
+								<li class="active">
+									<a href="#">主页</a>
+								</li>
+								<li>
+									<a href="#">链接</a>
+								</li>
+								<li>
+									<a href="#">链接</a>
+								</li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#">下拉菜单</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">下拉导航1</a>
+										</li>
+										<li>
+											<a href="#">下拉导航2</a>
+										</li>
+										<li>
+											<a href="#">其他</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li class="nav-header">
+											标签
+										</li>
+										<li>
+											<a href="#">链接1</a>
+										</li>
+										<li>
+											<a href="#">链接2</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="#">右边链接</a>
+								</li>
+								<li class="divider-vertical">
+								</li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#">下拉菜单</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">下拉导航1</a>
+										</li>
+										<li>
+											<a href="#">下拉导航2</a>
+										</li>
+										<li>
+											<a href="#">其他</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">链接3</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span8">
+			<div class="tabbable" id="tabs-995672">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-489660" data-toggle="tab">第一部分</a>
+					</li>
+					<li>
+						<a href="#panel-951461" data-toggle="tab">第二部分</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-489660">
+						<p>
+							第一部分内容.
+						</p>
+					</div>
+					<div class="tab-pane" id="panel-951461">
+						<p>
+							第二部分内容.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="row">
+				<div class="span12">
+					<div class="btn-group">
+						 <button class="btn" type="button"><em class="icon-align-left"></em></button> <button class="btn" type="button"><em class="icon-align-center"></em></button> <button class="btn" type="button"><em class="icon-align-right"></em></button> <button class="btn" type="button"><em class="icon-align-justify"></em></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<div class="btn-group">
+						 <button class="btn" type="button"><em class="icon-align-left"></em></button> <button class="btn" type="button"><em class="icon-align-center"></em></button> <button class="btn" type="button"><em class="icon-align-right"></em></button> <button class="btn" type="button"><em class="icon-align-justify"></em></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+				</div>
+			</div>
+			<ul class="nav nav-stacked nav-pills">
+				<li class="active">
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">资料</a>
+				</li>
+				<li class="disabled">
+					<a href="#">信息</a>
+				</li>
+				<li class="dropdown pull-right">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">操作</a>
+						</li>
+						<li>
+							<a href="#">设置栏目</a>
+						</li>
+						<li>
+							<a href="#">更多设置</a>
+						</li>
+						<li class="divider">
+						</li>
+						<li>
+							<a href="#">分割线</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+{% endblock %}

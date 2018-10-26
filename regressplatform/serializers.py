@@ -1,7 +1,7 @@
 
 from django.contrib.auth.models import User,Group
 from rest_framework import serializers
-from models import Task
+from models import Task,VueTemplate
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -18,3 +18,7 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Task
         fields=('task_id','task_name','start_time','end_time','status')
+
+class VueTemplateSedializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = VueTemplate
