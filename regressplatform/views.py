@@ -5,13 +5,13 @@ import json
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,JsonResponse
 from .apps import RegressplatformConfig
-from .models import Task,Projcet,Menu,Case,Step,Temlate
+from .models import Task,Projcet,Menu,Case,Step,Temlate,VueTemplate
 
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework.parsers import JSONParser
 
-from .serializers import UserSerializer, GroupSerializer,TaskSerializer
+from .serializers import UserSerializer, GroupSerializer,TaskSerializer,VueTemplateSedializer
 # Create your views here.
 
 def getfileds(model):
@@ -66,7 +66,10 @@ def tasks(request):
     if request.method == 'GET':
         task_lists = Task.objects.all()
         serializer = TaskSerializer(task_lists, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        response = JsonResponse(serializer.data, safe=False)
+        response['Access-Control-Allow-Origin'] = '*'
+        return response
+
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
@@ -89,7 +92,6 @@ def vuetemplate(request):
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
-
 
 def case_detail(request):
     menus = Menu.objects.all()
@@ -129,6 +131,10 @@ class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 
+class TemplateViewSet(viewsets.ModelViewSet):
+    queryset = VueTemplate.objects.all()
+    serializer_class = VueTemplateSedializer
+
 
 def ajax(request):
 
@@ -152,9 +158,4 @@ def template(request):
 
 def result(request):
     return render(request,'regress/html/result.html')
-
-
-
-
-
 

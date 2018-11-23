@@ -8,5 +8,17 @@
       <auth-required>false</auth-required>
       <introspection-schemas>*:main</introspection-schemas>
     </data-source>
+    <data-source name="@localhost" uuid="d18b4474-52f2-4075-89a9-c219ce9c04db">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>localhost</proxy-host>
+        <proxy-port>3306</proxy-port>
+        <use-password>true</use-password>
+      </ssh-properties>
+    </data-source>
   </component>
 </project>
